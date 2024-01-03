@@ -25,6 +25,8 @@ yarn add supervad onnxruntime-node
 yarn add supervad onnxruntime-web onnxruntime-node
 ```
 
+Some web environment requires serving onnx wasm files from root folder of a directory, please, check onnxruntime-web documentation for more details.
+
 ## How to use
 
 This library requires sound stream to be mono and `16kHz`, represented as `Float32Array` typed array. Most of modules process one `audio token` at once, which is exactly `320` samples, or `20ms` of audio. This library also need to have an access to onnx model, which you can provide as a url, file path or as `Buffer`-like object.
