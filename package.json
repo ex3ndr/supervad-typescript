@@ -6,7 +6,8 @@
   "author": "Steve Korshakov <steve@korshakov.com>",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib",
+    "models"
   ],
   "scripts": {
     "build": "rm -fr lib && tsc --declaration",
@@ -18,10 +19,12 @@
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "^3.1.0",
-    "release-it": "^15.5.1",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.6",
     "jest": "^29.7.0",
+    "onnxruntime-common": "^1.16.3",
+    "onnxruntime-node": "^1.16.3",
+    "release-it": "^15.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
