@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        // Picking something modern
+        "target": "esnext",
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        // Build settings
+        "sourceMap": true,
+        "outDir": "./lib",
+        "forceConsistentCasingInFileNames": true,
+        // Typechecking
+        "strict": true,
+        "skipLibCheck": true,
+    },
+    "include": [
+        "sources/**/*.ts",
+    ],
+    "exclude": [
+        "sources/**/*.spec.ts"
+    ]
+}
