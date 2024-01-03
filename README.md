@@ -31,7 +31,24 @@ Some web environment requires serving onnx wasm files from root folder of a dire
 
 This library requires sound stream to be mono and `16kHz`, represented as `Float32Array` typed array. Most of modules process one `audio token` at once, which is exactly `320` samples, or `20ms` of audio. This library also need to have an access to onnx model, which you can provide as a url, file path or as `Buffer`-like object.
 
+### Simple engine
+In case you want to get raw predictions, you can always use `SuperVADEngine` directly. Be advised: this module keeps track of few previous tokens and if you want to restart it you need to create a new one.
+
+```typescript
+import { SuperVADEngine } from 'supervad';
+
+// Create engine
+const engine = await SuperVADEngine.create('/supervad-1.onnx'); // Download model from url
+
+const token = new Float32Array(320); // Your audio token
+
+const probability = await engine.predict(token); // probability of a voice in this token 0..1
+
+```
+
 ### Realtime example in Web
+
+The most common usecase is to use it in realtime pipeline, this is an example to implement it in browser.
 
 ```typescript
 import { SuperVADEngine, SuperVADRealtime, SuperVADParameters, optimalParameters } from 'supervad';
